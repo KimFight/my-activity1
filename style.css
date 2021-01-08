@@ -1,0 +1,380 @@
+/* ハンバーガーメニュー */
+.open,
+.close {
+    display: none;
+}
+input[type="checkbox"] {
+    position: absolute;
+    left: -50vw;
+}
+
+/* scrollボタン */
+.scroll a {
+  display: inline-block;
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  z-index: 2;
+  padding: 10px 10px 100px;
+  overflow: hidden;
+  color: #fff;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: .2em; /* 文字間隔 */
+  text-transform: uppercase; /* 大文字 */
+  text-decoration: none;
+  writing-mode: vertical-lr; /* 縦書き */
+}
+
+.scroll a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  height: 90px;
+  background: #fff;
+}
+
+.scroll a::after {
+  height: 30px;
+  animation: sdl 1.5s ease infinite;
+}
+
+@keyframes sdl {
+  0% {
+    transform: translateY(-70px);
+  }
+  50%, 100% {
+    transform: translateY(30px);
+  }
+}
+
+
+/* スクロールでフワッと出てくるアニメーション */
+.animationTarget img{
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s;
+}
+
+.animationTarget.show img{
+  opacity: 1;
+  transform: none;
+}
+
+.animationTarget p{
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s;
+}
+
+.animationTarget.show p{
+  opacity: 1;
+  transform: none;
+}
+
+/* menuの横スクロール */
+.menu-main {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.menu-box {
+  display: inline-block;
+  width: 90%;
+}
+
+.none{
+  display: none;
+}
+
+/* 以下からCSS */
+
+/* 左のaddressの文字 */
+.address{
+  display: flex;
+  position: fixed;
+  top: 30%;
+  z-index: 90;
+  writing-mode: vertical-lr;
+  text-orientation: sideways;
+  line-height: 15px;
+  color: gainsboro;
+  font-size: 10px;
+}
+
+.address p{
+ padding: 3rem 2rem;
+}
+
+.nav-all{
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.nav-all ul{
+  display: flex;
+}
+
+.nav li{
+  padding: 25px 25px;
+}
+
+.nav a{
+ color: white;
+}
+
+.icon ul{
+  height: 100%;
+  padding-right: 2rem;
+}
+
+.icon li{
+  padding: 1.5rem;
+}
+
+.icon img{
+  width: 25px;
+  height: 25px;
+}
+/* レスポンんジブ用隠し要素 */
+.res-logo,
+.res-icon{
+  display: none;
+}
+
+.store-name{
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* 背景の灰色の部分 */
+.gray-box{
+  height: 100%;
+  background: 
+  linear-gradient(
+    to right,
+    #ffffff calc(100% / 3),
+    #ffffff calc(100% / 3),
+    #ffffff calc(200% / 3),
+    #f2f3f3 calc(200% / 3)
+  );
+  overflow: hidden;
+}
+
+/* コンセプト */
+.concept-box{
+  width: 950px;
+  margin: 6rem auto;
+  position: relative;
+  display: flex;
+}
+
+.concept-title{
+  padding: 1rem 4rem 0 0;
+}
+
+.concept-img img{
+  width: 650px;
+  height: 580px;
+}
+
+.main-title-font{
+  font-size: 3rem;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.sub-title-font{
+  font-size: 1rem;
+  color: gray;
+}
+
+.catch-copy{
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.notice{
+  width: 350px;
+  height: 250px;
+  background-color: white;
+  padding: 4rem 4rem 2rem 0;
+  position: absolute;
+  top: 280px;
+}
+
+.store-notice-box{
+  max-width: 950px;
+  margin: 5rem auto;
+  display: flex;
+}
+
+.store-notice-box-left img{
+  width: 550px; 
+}
+
+.store-notice-box-right{
+  padding-left: 2rem;
+}
+
+.store-notice-box-right img{
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.store-notice-box-font{
+  font-size: 1rem;
+  color: gray;
+  padding: 0 1.5rem;
+
+}
+
+/* 各メニュー*/
+.menu-img{
+  width: 100vw;
+  height: 500px;
+  background-image: url("image/store1.jpg");
+  background-size: cover;
+  text-align: center;
+}
+
+.menu-title{
+  font-size: 350%;
+  color: white;
+  padding-top: 9rem;
+}
+
+.menu-sub{
+  font-size: 1.5rem;
+  color: white;
+}
+
+.menu-notice{
+  max-width: 750px;
+  background-color: white;
+  margin: 6rem auto;
+  padding: 3rem;
+}
+
+.menu-notice h1{
+  font-size: 1.5rem;
+}
+
+.menu-notice p{
+  font-size: 0.8rem;
+  color: gray;
+  padding-bottom: 1rem;
+}
+
+.menu-main{
+  height: 500px;
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-box{
+  width: 300px;
+  height: 400px;
+  margin: 1rem;
+  text-align: center;
+}
+
+.menu-box img{
+  width: 100%;
+}
+
+.menu-name {
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-text{
+  text-align: left;
+  color: gray;
+}
+
+.instagram{
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.instagram img{
+  height: 20px;
+  width: 20px;
+}
+
+.instagram p{
+  padding: 0;
+  font-size: 2rem;
+}
+
+.instagram h3{
+  font-size: 1rem;
+  color: gray;
+}
+
+.instagram-img{
+  width: 70%;
+  height: 450px;
+  margin: auto;
+  background-color:lightsteelblue;
+  margin-bottom: 5rem;
+}
+
+.company{
+  width: 100%;
+  height: 100%;
+  padding: 5rem 0;
+  background-color: black;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.company-text{
+  width: 400px;
+  font-size: 1rem;
+  color: white;
+}
+
+.company-text img{
+  width: 90%;
+}
+
+.company-img img{
+  width: 500px;
+}
+
+.store-map{
+  width: 80%;
+  height: 450px;
+  margin: 5rem auto;
+  background-color:lightsteelblue;
+}
+
+.city{
+  width: 100%;
+  height: 450px;
+  background-image: url("image/city.jpg");
+}
+
+footer{
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding-top: 1rem;
+}
